@@ -1,4 +1,4 @@
-console.log("JS Session 01");
+console.log("JS01 Session");
 
 // 7 primitive data
 
