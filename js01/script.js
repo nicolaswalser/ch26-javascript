@@ -132,3 +132,39 @@ console.log("Contains 'Resolution': ", songsMattCorby.indexOf("Resolution")); //
 // -----------------------------------------------
 
 // Data Conversion
+const myNumber = 420;
+console.log("Number of minutes in the session: " + myNumber);
+
+// toString
+const myNumberTxt = String(myNumber);
+console.log("Number of minutes in the session: " + myNumberTxt);
+
+// toNumeric
+const myString = "420";
+// const sum = myString + 80; // * will return 24080 as concatination *
+const sum = Number(myString) + 80; // will convert to number than sum as numeric
+console.log("Value of Sum: " + sum);
+
+// toParseInt
+const myStringInteger = "420.69";
+const sumWhole = parseInt(myStringInteger) + 80; // will remove the numerics after the decimal (wants whole only)
+console.log("Value of Sum: " + sumWhole);
+
+// toParseFloat
+const myStringFloat = "420.69";
+const sumFloat = parseFloat(myStringFloat) + 80; // will include the numerics after the decimal
+console.log("Value of Sum: " + sumFloat);
+
+// toBoolean
+const booleanString = "false";
+console.log(Boolean(booleanString)); // any string in 'Boolean(" ")' will return as 'true' unless the string is empty = 'false'
+
+if (Boolean(booleanString) == false) console.log("Nick is Handsome");
+else console.log("Nick is not Handsome");
+
+// Boolean
+// To be false it must be: "", 0, null, undefined
+// Number
+// [] = 0 , [30] = 30 , [3,1] = NaN , false = 0, true = 1 ,
+// String
+// [] = "" , [1,2] = "1,2" , function(){} = function(){} , {} = [object, object]
