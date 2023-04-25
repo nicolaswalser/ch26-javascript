@@ -90,3 +90,91 @@ const areaTriangle = (base = 1, height = 1) => (base * height) / 2;
 
 console.log("Area of triangle: " + areaTriangle(5, 3));
 console.log("Area of triangle: " + areaTriangle(7)); // results in NaN because 7 * undefined / 2 is NaN
+
+// ----------- Rest Parameters -----------
+// Syntax: ...nameParameter
+// Allows us to represent a series of undifined values in the argument
+// Presents itself as an Array
+// End of the list of parameter
+
+/**
+ *
+ * @param {number} a first parameter
+ * @param {number} b second parameter
+ * @param  {...number} rest the rest of them
+ * @returns the sum of my complete parameters
+ */
+
+function sumNumbers(a, b, ...rest) {
+  let sum;
+  sum = a + b;
+  for (let index = 0; index < rest.length; index++) {
+    // will add the ...rest parameters one by one to the sum of a+b
+    sum += rest[index];
+  }
+
+  return sum;
+}
+
+console.log("Sum of various numbers: ", sumNumbers(5, 6));
+console.log("Sum of various numbers: ", sumNumbers(5, 6, 7, 8));
+console.log("Sum of various numbers: ", sumNumbers(5, 6, 7, 8, 9, 10));
+
+// ----------- CallBack Functions -----------
+// Function that passes another function as an argument,
+// to later be invoked
+
+// 3 funciones, una que imprima en consola, alert, DOM h1.
+// 1 parámetro de entrada.
+// no tiene return.
+
+// Función que imprime un mensaje en la consola
+function printToConsole(mensaje) {
+  console.log(mensaje);
+}
+
+// Función que muestra una alerta en la pantalla
+function showAlert(mensaje) {
+  alert(mensaje);
+}
+
+// Función que agrega un encabezado h1 al DOM
+const addH1 = (mensaje) => {
+  document.getElementById("div").innerHTML = `<h1>${mensaje}</h1>`;
+};
+
+function getNamePrintToConsole() {
+  const name = prompt("Dime tu nombre");
+  const text = `Hola ${name}, espero tengas un gran día`;
+  printToConsole(text);
+}
+function getNamePrintToDOM() {
+  const name = prompt("Dime tu nombre");
+  const text = `Hola ${name}, espero tengas un gran día`;
+  addH1(text);
+}
+// function getNameAndPrint(opcion) {
+//   // Esta es la buena
+//   const name = prompt("Dime tu nombre");
+//   const text = `Hola ${name}, espero tengas un gran día`;
+//   if (opcion === 1) printToConsole(text);
+//   else if (opcion === 2) addH1(text);
+//   else showAlert(text);
+// }
+
+// getNameAndPrint(1);
+// getNameAndPrint(2);
+// getNameAndPrint(3);
+
+function getNameAndPrint(functionPrint) {
+  // Esta es la buena
+  const name = prompt("Tell me your name");
+  const text = `Hi ${name}, have a nice day.`;
+  functionPrint(text);
+}
+
+// getNameAndPrint(printToConsole);
+// getNameAndPrint(addH1);
+// getNameAndPrint(showAlert);
+
+// --------------------------------------------
