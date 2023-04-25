@@ -195,13 +195,71 @@ function double(arr) {
   return doubleNumbers;
 }
 // A callback function using .map
-const duplicate = (number) => number * 2;
+// const duplicate = (number) => number * 2;
 
 function doubleWithMap(array) {
-  const duplicateArray = array.map(duplicate);
+  const duplicateArray = array.map((number) => number * 2);
   return duplicateArray;
 }
 
 const numbers = [5, 10, 15, 20, 25];
+
 // console.log(double(numbers));
 console.log(doubleWithMap(numbers));
+
+/*
+  Ejercicio 4
+  Crear un programa que itere sobre dos arreglos;
+  si hay cursos en común, imprimirlos en la consola.
+
+  Salida: commonCourse = ["Programming", "Music"]
+*/
+
+const student1Courses = [
+  "Math",
+  "English",
+  "Programming",
+  "Biology",
+  "Physics",
+  "Music",
+];
+const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+const student3Courses = ["Geography", "Physics", "Music"];
+
+// function cursosEnComun(student1Courses, student2Courses) {
+//   for (let i = 0; i < student1Courses.length; i++) {
+//     for (let j = 0; j < student2Courses.length; j++) {
+//       if (student1Courses[i] == student2Courses[j]) {
+//         console.log("Cursos en común :" + student1Courses[i]);
+//       }
+//     }
+//   }
+// }
+
+// cursosEnComun(student1Courses, student2Courses);
+
+function cursosEnComun(student1Courses, student2Courses) {
+  let commonCourses = "";
+
+  for (let i = 0; i < student1Courses.length; i++) {
+    for (let j = 0; j < student2Courses.length; j++) {
+      if (student1Courses[i] == student2Courses[j]) {
+        if (commonCourses !== "") {
+          commonCourses += ", ";
+        }
+        commonCourses += student1Courses[i];
+      }
+    }
+  }
+
+  console.log("Cursos en común: " + commonCourses);
+}
+
+// Using Filter and Includes
+function commonCoursesV2(student1Courses, student2Courses) {
+  return student1Courses.filter((course) => student2Courses.includes(course));
+}
+
+const commonCourses = commonCoursesV2(student1Courses, student2Courses);
+const commonCourses3 = commonCoursesV2(commonCourses, student3Courses);
+console.log("Common courses: ", commonCourses3);
