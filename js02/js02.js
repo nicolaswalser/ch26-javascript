@@ -263,3 +263,80 @@ function commonCoursesV2(student1Courses, student2Courses) {
 const commonCourses = commonCoursesV2(student1Courses, student2Courses);
 const commonCourses3 = commonCoursesV2(commonCourses, student3Courses);
 console.log("Common courses: ", commonCourses3);
+
+// ------------------ Count the the characters in a phrase ------------------
+// "pepe pecas pica papas con un pico y una pala"
+// how many 'p' are there in the sentence. : 8
+
+// const str = "pepe pecas pica papas con un pico y una pala";
+
+// const countPs = (str) => {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === "p") {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
+
+// console.log("Number of P's: " + countPs(str));
+
+phrase = "pepe pecas pica papas con un pico y una pala";
+
+const countChar = (p, phrase) => phrase.split("").filter((c) => c == p).length;
+
+console.log("Cantidad de letras 'p':", countChar("p", phrase));
+
+// ----------- Recursive Function -----------
+// A programming technique to call the same function
+// Warning: Do not enter in an infinite loop
+
+/*
+  function recursiveFunction(value){
+  if (breakCondition){
+  
+  }
+  else {
+      // Call resursive
+  }
+  }
+
+*/
+
+const factorial = (num) => {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result *= i;
+  }
+  return result;
+};
+
+// Recursive
+function recursiveFuactorial(num) {
+  if (num === 1) return 1;
+  return num * recursiveFuactorial(num - 1);
+}
+
+console.log("Factorial de 5: " + factorial(5));
+console.log("Factorial de 5: " + recursiveFuactorial(5));
+
+// ----------- Exercise -----------
+// Recursive function that prints to console :
+/*
+Hello 1
+Hello 2
+Hello 3
+...
+Hello 10
+*/
+
+const printHello = (num) => {
+  if (num > 10) {
+    return;
+  }
+  console.log(`Hello ${num}`);
+  printHello(num + 1);
+};
+
+printHello(1);
