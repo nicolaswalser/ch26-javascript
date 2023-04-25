@@ -178,3 +178,30 @@ function getNameAndPrint(functionPrint) {
 // getNameAndPrint(showAlert);
 
 // --------------------------------------------
+/*
+  Excercise 2
+  Describe a function that takes an array of numbers,
+  duplicate the value of each number of the arry,
+  print the new updated array.
+  [5, 10, 15, 20, 25] -> [10, 20, 30, 40, 50]
+*/
+
+function double(arr) {
+  const doubleNumbers = [];
+  for (let i = 0; i < arr.length; i++) {
+    const duplicate = arr[i] * 2;
+    doubleNumbers.push(duplicate);
+  }
+  return doubleNumbers;
+}
+// A callback function using .map
+const duplicate = (number) => number * 2;
+
+function doubleWithMap(array) {
+  const duplicateArray = array.map(duplicate);
+  return duplicateArray;
+}
+
+const numbers = [5, 10, 15, 20, 25];
+// console.log(double(numbers));
+console.log(doubleWithMap(numbers));
