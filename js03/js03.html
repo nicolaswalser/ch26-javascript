@@ -8,6 +8,16 @@
   </head>
   <body>
     <h1>JS03 Session</h1>
+    <form>
+      <label for="month">Enter month number</label>
+      <input type="number" id="month" min="1" max="12" />
+      <button onclick="getSeason()">Submit</button>
+    </form>
+    <form>
+      <label for="week">Enter weekday number</label>
+      <input type="number" id="week" min="1" max="7" />
+      <button onclick="getWeekdayByNumber()">Submit</button>
+    </form>
     <script src="js03.js"></script>
   </body>
 </html>
