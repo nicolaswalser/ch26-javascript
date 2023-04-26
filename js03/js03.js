@@ -199,7 +199,7 @@ const getWeekdayByNumber = () => {
   }
 };
 
-// ------------- Conditional operator -------------
+// ------------- Conditional operator Ternary -------------
 /*
   The only operator of JavaScript that has 3 operators.
   Generally used as an option in if-else instructions.
@@ -232,3 +232,20 @@ console.log(
 
 // ------------- Exercise -------------
 //
+/*
+  const printHello = (num) => {
+    if (num > 10) {
+      return;
+    }
+    console.log(`Hello ${num}`);
+    printHello(num + 1);
+  };
+
+  printHello(1);
+*/
+
+const printHello = (num) => {
+  num > 10 ? undefined : console.log(`Hello ${num}`) + printHello(num + 1);
+};
+
+printHello(1);
