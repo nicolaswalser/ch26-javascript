@@ -18,10 +18,32 @@ const getProducts = (url) => {
   fetch(url)
     .then((response) => {
       console.log(response);
+      console.log("Status: " + response.status);
+      return response.json();
+    })
+    .then((productsObj) => {
+      console.log(productsObj);
+      // print only title
+      const titles = productsObj.map((obj) => obj.title);
+      console.log(titles);
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
-getProducts(url);
+// getProducts(url);
+
+// consume Fetch using async - wait
+
+const getProductsAwait = async (url) => {
+  const getProductsJson = await fetch(url);
+  const products = await getProductsJson.json();
+  console.log(products);
+  localStorage.setItem("My products: ", JSON.stringify(products));
+  products.map((product) => {
+    console.log(product.title);
+  });
+};
+
+//getProductsAwait(url);
