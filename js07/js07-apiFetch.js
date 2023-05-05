@@ -47,3 +47,25 @@ const getProductsAwait = async (url) => {
 };
 
 //getProductsAwait(url);
+
+// -------- Post petition ----------
+
+const postUser = (url, userData) => {
+  fetch(url, {
+    method: "POST", // 'PUT', 'DELETE'
+    body: JSON.stringify(userData), // data of the user
+    header: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .then((register) => console.log(register))
+    .catch((error) => console.log(error));
+};
+
+const user = {
+  name: "dracula",
+  job: "leader",
+};
+
+const urlPost = "https://reqres.in/api/users";
+
+postUser(urlPost, user);
