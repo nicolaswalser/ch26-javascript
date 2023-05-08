@@ -1,13 +1,6 @@
 console.log("-----JS09 Axios-----");
 const url = "https://reqres.in/api/users?page=2";
 const urlPost = "https://reqres.in/api/users";
-const data = {
-  id: 7,
-  email: "walsergomez@gmail.com",
-  first_name: "Nicolas",
-  last_name: "Walser",
-  avatar: "",
-};
 
 // Fetch with .then/.catch
 const getUsersFetch = () => {
@@ -37,6 +30,14 @@ const getUsersAsyncAwait = async () => {
 };
 
 // Axios Post
+const data = {
+  id: 7,
+  email: "walsergomez@gmail.com",
+  first_name: "Nicolas",
+  last_name: "Walser",
+  avatar: "",
+};
+
 const postUsers = async () => {
   const response = await axios.post(urlPost, data);
   console.log(response);
