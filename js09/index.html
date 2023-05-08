@@ -12,6 +12,25 @@
   </head>
   <body>
     <h1>JS09 NPM</h1>
+    <button type="button" onclick="getUsersFetch()" class="btn btn-primary">
+      Users Fetch
+    </button>
+    <button type="button" onclick="getUsersAxios()" class="btn btn-danger">
+      Users Axios
+    </button>
+    <button
+      type="button"
+      onclick="getUsersAsyncAwait()"
+      class="btn btn-success"
+    >
+      Users Axios Async/Await
+    </button>
+    <button type="button" onclick="postUsers()" class="btn btn-secondary">
+      POST Users
+    </button>
+
+    <p id="errorP"></p>
+
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
     <script src="./assets/scripts/index.js"></script>
